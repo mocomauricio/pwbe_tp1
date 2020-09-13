@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.0" xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+  <persistence-unit name="laboratorioPU">
+    <jta-data-source>java:jboss/datasources/laboratorio</jta-data-source>
+    <class>py.com.prueba.laboratorio.modelo.Persona</class>
+    <class>py.com.prueba.laboratorio.modelo.Agenda</class>
+    <class>py.com.prueba.laboratorio.modelo.Cliente</class>
+    <class>py.com.prueba.laboratorio.modelo.Punto</class>
+    <class>py.com.prueba.laboratorio.modelo.AsignacionPunto</class>
+    <class>py.com.prueba.laboratorio.modelo.VencimientoPunto</class>
+    <class>py.com.prueba.laboratorio.modelo.Bolsa</class>
+    <class>py.com.prueba.laboratorio.modelo.Cabecera</class>
+    <class>py.com.prueba.laboratorio.modelo.Detalle</class>
+    <properties>
+      <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect"/>
+      <property name="hibernate.show_sql" value="true"/>
+      <property name="hibernate.id.new_generator_mappings" value="true"/>
+      <property name="hibernate.hbm2ddl.auto" value="update"/>
+    </properties>
+  </persistence-unit>
+</persistence>
