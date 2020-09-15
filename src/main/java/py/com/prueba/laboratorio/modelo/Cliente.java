@@ -5,6 +5,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.logging.Logger;
 
 @Entity
 @Table(name = "cliente")
@@ -45,6 +46,7 @@ public class Cliente implements Serializable{
     private String telefono;
 
     @Column(name = "fecha_nacimiento")
+    @Basic(optional = false)
     @Temporal(TemporalType.DATE)
     private Date fechaNacimiento;
     
@@ -52,7 +54,7 @@ public class Cliente implements Serializable{
 
     }
 
-    public Integer getIdCliente() {
+    public Integer getId() {
         return id;
     }
 
@@ -84,7 +86,11 @@ public class Cliente implements Serializable{
         return telefono;
     }
 
-    public void setIdCliente(Integer id) {
+    public Date getFechaNacimiento() {
+        return fechaNacimiento;
+    }
+
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -116,15 +122,10 @@ public class Cliente implements Serializable{
         this.telefono = telefono;
     }
 
-    public Date getFechaNacimiento() {
-        return fechaNacimiento;
-    }
-
     public void setFechaNacimiento(Date fechaNacimiento) {
         this.fechaNacimiento = fechaNacimiento;
     }
 
-    
     @Override
     public String toString() {
         return nombre+ " "+apellido;

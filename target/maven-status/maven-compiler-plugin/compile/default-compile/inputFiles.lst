@@ -1,3 +1,4 @@
+/home/galactus/Escritorio/laboratorio/src/main/java/py/com/prueba/laboratorio/rest/BolsaRest.java
 /home/galactus/Escritorio/laboratorio/src/main/java/py/com/prueba/laboratorio/modelo/Detalle.java
 /home/galactus/Escritorio/laboratorio/src/main/java/py/com/prueba/laboratorio/modelo/Cabecera.java
 /home/galactus/Escritorio/laboratorio/src/main/java/py/com/prueba/laboratorio/modelo/VencimientoPunto.java
@@ -7,6 +8,7 @@
 /home/galactus/Escritorio/laboratorio/src/main/java/py/com/prueba/laboratorio/rest/ClienteRest.java
 /home/galactus/Escritorio/laboratorio/src/main/java/py/com/prueba/laboratorio/modelo/Cliente.java
 /home/galactus/Escritorio/laboratorio/src/main/java/py/com/prueba/laboratorio/ejb/PersonaDAO.java
+/home/galactus/Escritorio/laboratorio/src/main/java/py/com/prueba/laboratorio/ejb/BolsaDAO.java
 /home/galactus/Escritorio/laboratorio/src/main/java/py/com/prueba/laboratorio/rest/PersonaRest.java
 /home/galactus/Escritorio/laboratorio/src/main/java/py/com/prueba/laboratorio/rest/ApplicationConfig.java
 /home/galactus/Escritorio/laboratorio/src/main/java/py/com/prueba/laboratorio/modelo/Punto.java

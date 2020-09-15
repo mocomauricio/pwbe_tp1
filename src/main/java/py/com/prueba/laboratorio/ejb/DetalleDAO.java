@@ -1,6 +1,6 @@
 package py.com.prueba.laboratorio.ejb;
 
-import py.com.prueba.laboratorio.modelo.Cliente;
+import py.com.prueba.laboratorio.modelo.Detalle;
 
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
@@ -9,30 +9,30 @@ import javax.persistence.Query;
 import java.util.List;
 
 @Stateless
-public class ClienteDAO {
+public class DetalleDAO {
     @PersistenceContext(unitName = "laboratorioPU")
     EntityManager em;
 
-    public Cliente get(Integer id) {
-        return em.find(Cliente.class, id);
+    public Detalle get(Integer id) {
+        return em.find(Detalle.class, id);
     }
 
-    public void persist(Cliente entidad) {
+    public void persist(Detalle entidad) {
         this.em.persist(entidad);
     }
 
-    public void merge(Cliente entidad) {
+    public void merge(Detalle entidad) {
         this.em.merge(entidad);
     }
 
     public void delete(Integer id) {
-        this.em.remove(this.em.find(Cliente.class,id));
+        this.em.remove(this.em.find(Detalle.class,id));
     }
     
 
     @SuppressWarnings("unchecked")
-    public List<Cliente> lista() {
-        Query q = em.createQuery("SELECT p FROM Cliente p");
-        return (List<Cliente>)q.getResultList();
+    public List<Detalle> lista() {
+        Query q = em.createQuery("SELECT p FROM Detalle p");
+        return (List<Detalle>)q.getResultList();
     }
 }

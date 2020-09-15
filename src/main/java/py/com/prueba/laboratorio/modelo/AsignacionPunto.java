@@ -29,21 +29,23 @@ public class AsignacionPunto implements Serializable {
     private Integer id;
     
     @Column(name = "limite_inferior")
+    @Basic(optional = false)
     private Integer limiteInferior;
     
     @Column(name = "limite_superior")
+    @Basic(optional = false)
     private Integer limiteSuperior;
     
     @Column(name = "monto_equivalencia")
+    @Basic(optional = false)
     private Integer montoEquivalencia;
-    
+
+    public AsignacionPunto() {
+
+    }
     
     public Integer getId() {
         return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
     }
 
     public Integer getLimiteInferior() {
@@ -58,6 +60,10 @@ public class AsignacionPunto implements Serializable {
         return montoEquivalencia;
     }
 
+    public void setId(Integer id) {
+        this.id = id;
+    }    
+    
     public void setLimiteInferior(Integer limiteInferior) {
         this.limiteInferior = limiteInferior;
     }

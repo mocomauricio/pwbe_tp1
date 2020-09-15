@@ -1,51 +1,51 @@
 package py.com.prueba.laboratorio.rest;
 
 
-import py.com.prueba.laboratorio.ejb.ClienteDAO;
-import py.com.prueba.laboratorio.modelo.Cliente;
+import py.com.prueba.laboratorio.ejb.AsignacionPuntoDAO;
+import py.com.prueba.laboratorio.modelo.AsignacionPunto;
 
 import javax.inject.Inject;
 import javax.ws.rs.*;
 import javax.ws.rs.core.Response;
 
-@Path("cliente")
+@Path("asignacionPunto")
 @Consumes("application/json")
 @Produces("application/json")
-public class ClienteRest {
+public class AsignacionPuntoRest {
 
     @Inject
-    ClienteDAO clienteDAO;
+    AsignacionPuntoDAO asignacionPuntoDAO;
 
     @GET
     @Path("/{pk}")
     public Response obtener(@PathParam("pk") Integer pk) {
-        return Response.ok(clienteDAO.get(pk)).build();
+        return Response.ok(asignacionPuntoDAO.get(pk)).build();
     }
     
     @POST
     @Path("/")
-    public Response agregar(Cliente cliente) {
-        clienteDAO.persist(cliente);
+    public Response agregar(AsignacionPunto asignacionPunto) {
+        asignacionPuntoDAO.persist(asignacionPunto);
         return Response.ok().build();
     }
 
     @PUT
     @Path("/")
-    public Response modificar(Cliente cliente) {
-        clienteDAO.merge(cliente);
+    public Response modificar(AsignacionPunto asignacionPunto) {
+        asignacionPuntoDAO.merge(asignacionPunto);
         return Response.ok().build();
     }
 
     @GET
     @Path("/")
     public Response lista() {
-        return Response.ok(clienteDAO.lista()).build();
+        return Response.ok(asignacionPuntoDAO.lista()).build();
     }
     
     @DELETE
     @Path("/{pk}")
     public Response borrar(@PathParam("pk") Integer pk){
-        clienteDAO.delete(pk);
+        asignacionPuntoDAO.delete(pk);
         return Response.ok().build();
 
     }

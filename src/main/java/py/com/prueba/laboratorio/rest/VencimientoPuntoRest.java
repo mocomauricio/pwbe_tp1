@@ -1,51 +1,51 @@
 package py.com.prueba.laboratorio.rest;
 
 
-import py.com.prueba.laboratorio.ejb.ClienteDAO;
-import py.com.prueba.laboratorio.modelo.Cliente;
+import py.com.prueba.laboratorio.ejb.VencimientoPuntoDAO;
+import py.com.prueba.laboratorio.modelo.VencimientoPunto;
 
 import javax.inject.Inject;
 import javax.ws.rs.*;
 import javax.ws.rs.core.Response;
 
-@Path("cliente")
+@Path("vencimientoPunto")
 @Consumes("application/json")
 @Produces("application/json")
-public class ClienteRest {
+public class VencimientoPuntoRest {
 
     @Inject
-    ClienteDAO clienteDAO;
+    VencimientoPuntoDAO vencimientoPuntoDAO;
 
     @GET
     @Path("/{pk}")
     public Response obtener(@PathParam("pk") Integer pk) {
-        return Response.ok(clienteDAO.get(pk)).build();
+        return Response.ok(vencimientoPuntoDAO.get(pk)).build();
     }
     
     @POST
     @Path("/")
-    public Response agregar(Cliente cliente) {
-        clienteDAO.persist(cliente);
+    public Response agregar(VencimientoPunto vencimientoPunto) {
+        vencimientoPuntoDAO.persist(vencimientoPunto);
         return Response.ok().build();
     }
 
     @PUT
     @Path("/")
-    public Response modificar(Cliente cliente) {
-        clienteDAO.merge(cliente);
+    public Response modificar(VencimientoPunto vencimientoPunto) {
+        vencimientoPuntoDAO.merge(vencimientoPunto);
         return Response.ok().build();
     }
 
     @GET
     @Path("/")
     public Response lista() {
-        return Response.ok(clienteDAO.lista()).build();
+        return Response.ok(vencimientoPuntoDAO.lista()).build();
     }
     
     @DELETE
     @Path("/{pk}")
     public Response borrar(@PathParam("pk") Integer pk){
-        clienteDAO.delete(pk);
+        vencimientoPuntoDAO.delete(pk);
         return Response.ok().build();
 
     }

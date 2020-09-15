@@ -29,12 +29,30 @@ public class Punto implements Serializable {
     private Integer id;
 
     @Column(name = "descripcion",length = 512)
+    @Basic(optional = false)
     private String descripcion;
     
     @Column(name = "puntos_requeridos")
+    @Basic(optional = false)
     private Integer puntosRequeridos;
 
-    public void setIdPunto(Integer id) {
+    public Punto() {
+        
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public Integer getPuntosRequeridos() {
+        return puntosRequeridos;
+    }
+
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -46,18 +64,6 @@ public class Punto implements Serializable {
         this.puntosRequeridos = puntosRequeridos;
     }
 
-    public Integer getIdPunto() {
-        return id;
-    }
-
-    public String getDescripcion() {
-        return descripcion;
-    }
-
-    public Integer getPuntosRequeridos() {
-        return puntosRequeridos;
-    }
-    
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set

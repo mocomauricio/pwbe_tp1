@@ -1,51 +1,51 @@
 package py.com.prueba.laboratorio.rest;
 
 
-import py.com.prueba.laboratorio.ejb.ClienteDAO;
-import py.com.prueba.laboratorio.modelo.Cliente;
+import py.com.prueba.laboratorio.ejb.CabeceraDAO;
+import py.com.prueba.laboratorio.modelo.Cabecera;
 
 import javax.inject.Inject;
 import javax.ws.rs.*;
 import javax.ws.rs.core.Response;
 
-@Path("cliente")
+@Path("cabecera")
 @Consumes("application/json")
 @Produces("application/json")
-public class ClienteRest {
+public class CabeceraRest {
 
     @Inject
-    ClienteDAO clienteDAO;
+    CabeceraDAO cabeceraDAO;
 
     @GET
     @Path("/{pk}")
     public Response obtener(@PathParam("pk") Integer pk) {
-        return Response.ok(clienteDAO.get(pk)).build();
+        return Response.ok(cabeceraDAO.get(pk)).build();
     }
     
     @POST
     @Path("/")
-    public Response agregar(Cliente cliente) {
-        clienteDAO.persist(cliente);
+    public Response agregar(Cabecera cabecera) {
+        cabeceraDAO.persist(cabecera);
         return Response.ok().build();
     }
 
     @PUT
     @Path("/")
-    public Response modificar(Cliente cliente) {
-        clienteDAO.merge(cliente);
+    public Response modificar(Cabecera cabecera) {
+        cabeceraDAO.merge(cabecera);
         return Response.ok().build();
     }
 
     @GET
     @Path("/")
     public Response lista() {
-        return Response.ok(clienteDAO.lista()).build();
+        return Response.ok(cabeceraDAO.lista()).build();
     }
     
     @DELETE
     @Path("/{pk}")
     public Response borrar(@PathParam("pk") Integer pk){
-        clienteDAO.delete(pk);
+        cabeceraDAO.delete(pk);
         return Response.ok().build();
 
     }

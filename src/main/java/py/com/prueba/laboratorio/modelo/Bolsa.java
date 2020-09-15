@@ -17,6 +17,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 /**
  *
@@ -36,22 +38,34 @@ public class Bolsa implements Serializable {
     private Cliente cliente;
     
     @Column(name = "fecha_asignacion_puntaje")
+    @Basic(optional = false)
+    @Temporal(TemporalType.DATE)
     private Date fechaAsignacionPuntaje;
 
-    @Column(name = "fecha_caducidad_puntaje")    
+    @Column(name = "fecha_caducidad_puntaje")
+    @Basic(optional = false)
+    @Temporal(TemporalType.DATE)
     private Date fechaCaducidadPuntaje;
     
     @Column(name = "puntaje_asignacion")
+    @Basic(optional = false)
     private Integer puntajeAsignado;
 
-    @Column(name = "puntaje_utilizado")    
+    @Column(name = "puntaje_utilizado")
+    @Basic(optional = false)
     private Integer puntajeUtilizado;
     
     @Column(name = "saldo_puntos")
+    @Basic(optional = false)
     private Integer saldoPuntos;
     
     @Column(name = "monto_operacion")
+    @Basic(optional = false)
     private Integer montoOperación;
+
+    public Bolsa() {
+        
+    }
 
     public void setCliente(Cliente cliente) {
         this.cliente = cliente;

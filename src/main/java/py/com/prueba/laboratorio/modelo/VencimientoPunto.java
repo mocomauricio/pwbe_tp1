@@ -14,6 +14,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 /**
  *
@@ -29,13 +31,22 @@ public class VencimientoPunto implements Serializable {
     private Integer id;
     
     @Column(name = "fecha_inicio_validez")
+    @Basic(optional = false)
+    @Temporal(TemporalType.DATE)
     private Date fechaInicioValidez;
 
-    @Column(name = "fecha_fin_validez")    
+    @Column(name = "fecha_fin_validez")
+    @Basic(optional = false)
+    @Temporal(TemporalType.DATE)
     private Date fechaFinValidez;
     
     @Column(name = "dias_duracion")
+    @Basic(optional = false)
     private Integer diasDuracion;
+
+    public VencimientoPunto() {
+        
+    }
     
     public Integer getId() {
         return id;

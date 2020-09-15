@@ -13,17 +13,22 @@ public class BolsaDAO {
     @PersistenceContext(unitName = "laboratorioPU")
     EntityManager em;
 
-    public void agregar(Bolsa entidad) {
+    public Bolsa get(Integer id) {
+        return em.find(Bolsa.class, id);
+    }
+
+    public void persist(Bolsa entidad) {
         this.em.persist(entidad);
     }
 
-    public void modificar(Bolsa entidad) {
+    public void merge(Bolsa entidad) {
         this.em.merge(entidad);
     }
 
-    public void eliminar(Integer id) {
+    public void delete(Integer id) {
         this.em.remove(this.em.find(Bolsa.class,id));
     }
+    
 
     @SuppressWarnings("unchecked")
     public List<Bolsa> lista() {

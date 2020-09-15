@@ -17,6 +17,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 /**
  *
@@ -36,20 +38,24 @@ public class Cabecera implements Serializable {
     private Cliente cliente;
 
     @Column(name = "puntaje_utilizado")
+    @Basic(optional = false)
     private Integer puntajeUtilizado;
 
     @Column(name = "fecha")
+    @Basic(optional = false)
+    @Temporal(TemporalType.DATE)
     private Date fecha;
 
-    @Column(name = "concepto")    
+    @Column(name = "concepto")
+    @Basic(optional = false)
     private String concepto;
+
+    public Cabecera() {
+        
+    }
     
     public Integer getId() {
         return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
     }
 
     public Cliente getCliente() {
@@ -67,7 +73,10 @@ public class Cabecera implements Serializable {
     public String getConcepto() {
         return concepto;
     }
-
+    public void setId(Integer id) {
+        this.id = id;
+    }
+    
     public void setCliente(Cliente cliente) {
         this.cliente = cliente;
     }
