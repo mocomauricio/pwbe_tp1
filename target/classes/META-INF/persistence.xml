@@ -5,12 +5,12 @@
     <class>py.com.prueba.laboratorio.modelo.Persona</class>
     <class>py.com.prueba.laboratorio.modelo.Agenda</class>
     <class>py.com.prueba.laboratorio.modelo.Cliente</class>
-    <class>py.com.prueba.laboratorio.modelo.Punto</class>
-    <class>py.com.prueba.laboratorio.modelo.AsignacionPunto</class>
-    <class>py.com.prueba.laboratorio.modelo.VencimientoPunto</class>
-    <class>py.com.prueba.laboratorio.modelo.Bolsa</class>
-    <class>py.com.prueba.laboratorio.modelo.Cabecera</class>
-    <class>py.com.prueba.laboratorio.modelo.Detalle</class>
+    <class>py.com.prueba.laboratorio.modelo.ConceptoPuntos</class>
+    <class>py.com.prueba.laboratorio.modelo.ReglaAsignacionPuntos</class>
+    <class>py.com.prueba.laboratorio.modelo.BolsaPuntos</class>
+    <class>py.com.prueba.laboratorio.modelo.UsoPuntosCabecera</class>
+    <class>py.com.prueba.laboratorio.modelo.UsoPuntosDetalle</class>
+    <class>py.com.prueba.laboratorio.modelo.VencimientoPuntos</class>
     <properties>
       <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect"/>
       <property name="hibernate.show_sql" value="true"/>
