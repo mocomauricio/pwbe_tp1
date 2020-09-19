@@ -1,0 +1,51 @@
+POST CLIENTE
+http://localhost:8080/laboratorio-1.0-SNAPSHOT/clientes/
+
+{
+	"nombre":"mauricio",
+	"apellido":"dominguez",
+	"numeroDocumento":"123456",
+	"tipoDocumento":"cedula",
+	"nacionalidad":"paraguaya",
+	"email":"qwert@asdfg.com",
+	"telefono":"4654654",
+	"fechaNacimiento":"2013-10-21T13:28:06.419Z"
+	
+}
+
+http://localhost:8080/laboratorio-1.0-SNAPSHOT/clientes/
+
+{
+	"nombre":"jonatan",
+	"apellido":"funes",
+	"numeroDocumento":"45465",
+	"tipoDocumento":"cedula",
+	"nacionalidad":"paraguaya",
+	"email":"qwert@asdfg.com",
+	"telefono":"4654654",
+	"fechaNacimiento":"2014-10-21T13:28:06.419Z"
+	
+}
+
+GETS Cliente
+http://localhost:8080/laboratorio-1.0-SNAPSHOT/clientes/
+http://localhost:8080/laboratorio-1.0-SNAPSHOT/clientes/porNombre?nombre=mau
+http://localhost:8080/laboratorio-1.0-SNAPSHOT/clientes/porApellido?apellido=fun
+
+POST Conceptos
+http://localhost:8080/laboratorio-1.0-SNAPSHOT/conceptos
+ {
+ 	"descripcion":"orden de compra",
+	"puntosRequeridos":5
+ }
+
+POST ReglaAsignacion
+http://localhost:8080/laboratorio-1.0-SNAPSHOT/asignacionpuntos
+{
+	"limiteInferior":1000,
+	"limiteSuperior":10000,
+	"montoEquivalencia":100
+}
+
+GET ReglaAsignacion
+http://localhost:8080/laboratorio-1.0-SNAPSHOT/asignacionpuntos/monto/5000
