@@ -39,14 +39,14 @@ public class BolsaPuntosRest {
     }
     
     @GET
-    @Path("/byCliente")
+    @Path("/porCliente")
     @Produces(MediaType.APPLICATION_JSON)
     public Response listarByCliente(@QueryParam("id") Integer idCliente) {
         return Response.ok(bolsaPuntosDAO.listarByCliente(idCliente)).build();
     }
     
     @GET
-    @Path("/byRango")
+    @Path("/porRango")
     @Produces(MediaType.APPLICATION_JSON)
     public Response listarByCliente(
             @QueryParam("valorInicio") Integer valorInicio,

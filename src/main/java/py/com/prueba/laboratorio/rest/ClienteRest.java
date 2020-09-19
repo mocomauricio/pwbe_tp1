@@ -54,24 +54,24 @@ public class ClienteRest {
     }
     
     @GET
-    @Path("/byNombre")
+    @Path("/porNombre")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response listarByNombre(@QueryParam("nombre") String nombre) {
-        return Response.ok(clienteDAO.listarByNombre(nombre)).build();
+    public Response listarPorNombre(@QueryParam("nombre") String nombre) {
+        return Response.ok(clienteDAO.listarPorNombre(nombre)).build();
     }
     
     @GET
-    @Path("/byApellido")
+    @Path("/porApellido")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response listarByApellido(@QueryParam("apellido") String apellido) {
-        return Response.ok(clienteDAO.listarByApellido(apellido)).build();
+    public Response listarPorApellido(@QueryParam("apellido") String apellido) {
+        return Response.ok(clienteDAO.listarPorApellido(apellido)).build();
     }
     
     @GET
-    @Path("/byCumple")
+    @Path("/porCumple")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response listarByCumple(@QueryParam("cumple") String cumple) throws ParseException {
-        return Response.ok(clienteDAO.listarByCumple(cumple)).build();
+    public Response listarPorCumple(@QueryParam("cumple") String cumple) throws ParseException {
+        return Response.ok(clienteDAO.listarPorCumple(cumple)).build();
     }
 
 }

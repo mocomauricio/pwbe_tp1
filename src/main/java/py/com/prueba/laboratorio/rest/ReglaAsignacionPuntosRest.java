@@ -17,7 +17,7 @@ import javax.ws.rs.core.Response;
 import py.com.prueba.laboratorio.ejb.ReglaAsignacionPuntosDAO;
 import py.com.prueba.laboratorio.modelo.ReglaAsignacionPuntos;
 
-@Path("reglas-asignaciones")
+@Path("asignacionpuntos")
 public class ReglaAsignacionPuntosRest {
 
     @Inject
@@ -39,7 +39,7 @@ public class ReglaAsignacionPuntosRest {
     }
 
     @GET
-    @Path("/get-puntos/{monto}")
+    @Path("/monto/{monto}")
     @Produces(MediaType.APPLICATION_JSON)
     public Response getPuntos(@PathParam("monto") Double monto) {
         return Response.ok(reglaAsignacionPuntosDAO.getCantidadDePuntos(monto)).build();

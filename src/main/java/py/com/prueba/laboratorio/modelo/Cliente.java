@@ -1,5 +1,6 @@
 package py.com.prueba.laboratorio.modelo;
 
+import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.Basic;
 import javax.persistence.Column;
@@ -12,6 +13,7 @@ import javax.persistence.NamedQuery;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Entity
 @Table(name = "cliente")
@@ -21,18 +23,18 @@ import javax.persistence.Temporal;
             query = "SELECT c FROM Cliente c")
     ,
     @NamedQuery(
-            name = "Cliente.byNombre",
+            name = "Cliente.porNombre",
             query = "SELECT c FROM Cliente c WHERE c.nombre LIKE :nombreCliente")
     ,
     @NamedQuery(
-            name = "Cliente.byApellido",
+            name = "Cliente.porApellido",
             query = "SELECT c FROM Cliente c WHERE c.apellido LIKE :nombreApellido")
     ,
     @NamedQuery(
-            name = "Cliente.byCumple",
+            name = "Cliente.porCumple",
             query = "SELECT c FROM Cliente c ")
 })  
-public class Cliente {
+public class Cliente implements Serializable{
 
     @Id
     @Column(name = "id")

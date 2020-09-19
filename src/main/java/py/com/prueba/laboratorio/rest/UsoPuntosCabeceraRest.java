@@ -42,14 +42,14 @@ public class UsoPuntosCabeceraRest {
     }
 
     @GET
-    @Path("/byConcepto")
+    @Path("/porConcepto")
     @Produces(MediaType.APPLICATION_JSON)
     public Response listarByConcepto(@QueryParam("id") Integer idConcepto) {
         return Response.ok(usoPuntosCabeceraDAO.listarByConcepto(idConcepto)).build();
     }
 
     @GET
-    @Path("/byFecha")
+    @Path("/porFecha")
     @Produces(MediaType.APPLICATION_JSON)
     public Response listarByFecha(
             @QueryParam("fechaInicio") String fechaInicio,
@@ -63,7 +63,7 @@ public class UsoPuntosCabeceraRest {
     }
     
     @GET
-    @Path("/byCliente")
+    @Path("/porCliente")
     @Produces(MediaType.APPLICATION_JSON)
     public Response listarByCliente(@QueryParam("id") Integer idCliente) {
         return Response.ok(usoPuntosCabeceraDAO.listarByCliente(idCliente)).build();

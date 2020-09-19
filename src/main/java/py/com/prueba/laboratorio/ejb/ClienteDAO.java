@@ -36,28 +36,28 @@ public class ClienteDAO {
     }
 
     public void actualizar(Cliente cliente) {
-        this.em.getTransaction().begin();
+        //this.em.getTransaction().begin();
         this.em.merge(cliente);
-        this.em.getTransaction().commit();
+        //this.em.getTransaction().commit();
     }
     
-    public List<Cliente> listarByNombre(String nombreCliente) {
-        Query q = this.em.createNamedQuery("Cliente.byNombre");
+    public List<Cliente> listarPorNombre(String nombreCliente) {
+        Query q = this.em.createNamedQuery("Cliente.porNombre");
         return (List<Cliente>) q
                 .setParameter("nombreCliente", '%' + nombreCliente + '%')
                 .getResultList();
     }
     
-    public List<Cliente> listarByApellido(String nombreApellido) {
-        Query q = this.em.createNamedQuery("Cliente.byApellido");
+    public List<Cliente> listarPorApellido(String nombreApellido) {
+        Query q = this.em.createNamedQuery("Cliente.porApellido");
         return (List<Cliente>) q
                 .setParameter("nombreApellido", '%' + nombreApellido + '%')
                 .getResultList();
     }
     
-    public List<Cliente> listarByCumple(String cumple) throws ParseException {
+    public List<Cliente> listarPorCumple(String cumple) throws ParseException {
         Date fechaCumple = new SimpleDateFormat("dd/MM/yyyy").parse(cumple);
-        Query q = this.em.createNamedQuery("Cliente.byCumple");
+        Query q = this.em.createNamedQuery("Cliente.porCumple");
         
         
         List<Cliente> todos = (List<Cliente>) q.getResultList();
